@@ -1,0 +1,671 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+SU-27 simulation config.
+
+2006-06-04 Lee Elliott
+************************************************************************
+-->
+
+  <PropertyList>
+    <sim>
+      <flight-model>yasim</flight-model>
+      <status>v1.2</status>
+      <author>Lee Elliott, StuartC, VooDoo</author>
+      <aero>su27-yasim</aero>
+      <fuel-fraction>0.5</fuel-fraction>
+
+      <description>Sukoi SU-27 (YASim FDM)</description>
+	  
+	    <rating>
+      <FDM type="int">     3 </FDM>
+      <systems type="int"> 2 </systems>
+      <cockpit type="int"> 2 </cockpit>
+      <model type="int">   2</model>
+    </rating>
+
+      <virtual-cockpit archive="y">true</virtual-cockpit>
+		  
+	  <rendering>
+			<redout>
+				<parameters>
+					<blackout-complete-g>9.1</blackout-complete-g>
+					<blackout-onset-g>7.5</blackout-onset-g>
+				</parameters>
+			</redout>
+		</rendering>
+		
+		<multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+         <!--><int n="0" alias="/sim/crashed" /><-->
+		 
+		  
+        <!-- Nav lights on -->
+      <int n="0" alias="/controls/lighting/nav-lights-switch" />
+      <!-- Beacon on -->
+      <int n="1" alias="/controls/lighting/beacon-switch" />
+      <!-- Landing lights on -->
+      <int n="2" alias="/controls/lighting/landing-lights-switch" />
+	    <!-- Taxi light on -->
+      <int n="3" alias="/controls/lighting/taxi-light-switch" />
+	  
+	  <!-- Engine Status -->
+	  
+	  <int n="5" alias="/engines/engine[0]/state" />
+	  <int n="6" alias="/engines/engine[1]/state" />
+	  <int n="7" alias="/sim/crashed" />
+	  
+        
+        <float n="0" alias="/surface-positions/left-taileron-pos-norm"/>
+        <float n="1" alias="/surface-positions/right-taileron-pos-norm"/>
+		<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
+		<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
+		<float n="4" alias="/sim/model/nozzle-animation"/>
+		<float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
+	    <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->
+			
+      </generic>
+    </multiplay>
+
+      <view n="0">
+        <internal archive="y">true</internal>
+        <config>
+          <x-offset-m archive="y">0.00</x-offset-m>
+          <y-offset-m archive="y">1.45</y-offset-m>
+          <z-offset-m archive="y">5.23</z-offset-m>
+          <pitch-offset-deg>0</pitch-offset-deg>
+          <default-field-of-view-deg>55</default-field-of-view-deg>
+        </config>
+      </view>
+	  
+	  
+	   <view n="101">
+	   <name>Pilot cam</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+          <x-offset-m archive="y">0.00</x-offset-m>
+          <y-offset-m archive="y">1.45</y-offset-m>
+          <z-offset-m archive="y">4.8</z-offset-m>
+          <pitch-offset-deg>0</pitch-offset-deg>
+		  <heading-offset-deg>180</heading-offset-deg>
+          <default-field-of-view-deg>95</default-field-of-view-deg>
+        </config>
+      </view>
+	  
+	   <view n="100">
+	   <name>Over the shoulder cam</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+         <x-offset-m archive="y">0.5</x-offset-m>
+          <y-offset-m archive="y">1.45</y-offset-m>
+          <z-offset-m archive="y">5.66</z-offset-m>
+          <pitch-offset-deg>0</pitch-offset-deg>
+		  <heading-offset-deg>15</heading-offset-deg>
+          <default-field-of-view-deg>95</default-field-of-view-deg>
+        </config>
+      </view>
+
+     
+
+<!-- Shift the camera target point back -->
+      <view n="1">
+        <config>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+		  <pitch-offset-deg archive="y">6</pitch-offset-deg>
+        </config>
+      </view>
+
+      <view n="2">
+        <config>
+          <y-offset-m archive="y" type="double">5.4</y-offset-m>
+          <z-offset-m archive="y">-19.7</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+		  <pitch-offset-deg archive="y">6</pitch-offset-deg>
+        </config>
+      </view>
+
+      <view n="3">
+        <config>
+          <y-offset-m archive="y" type="double">5.4</y-offset-m>
+          <z-offset-m archive="y">-19.7</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+		  <pitch-offset-deg archive="y">6</pitch-offset-deg>
+        </config>
+      </view>
+
+      <view n="4">
+        <config>
+           <y-offset-m archive="y" type="double">5.4</y-offset-m>
+          <z-offset-m archive="y">-19.7</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+		  <pitch-offset-deg archive="y">6</pitch-offset-deg>
+        </config>
+      </view>
+
+      <view n="5">
+        <config>
+           <y-offset-m archive="y" type="double">5.4</y-offset-m>
+          <z-offset-m archive="y">-19.7</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+		  <pitch-offset-deg archive="y">6</pitch-offset-deg>
+        </config>
+      </view>
+
+      <view n="6">
+        <config>
+           <y-offset-m archive="y" type="double">5.4</y-offset-m>
+          <z-offset-m archive="y">-19.7</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+		  <pitch-offset-deg archive="y">6</pitch-offset-deg>
+        </config>
+      </view>
+	  
+	  <view n="7">
+        <config>
+           <y-offset-m archive="y" type="double">5.4</y-offset-m>
+          <z-offset-m archive="y">-19.7</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+		  <pitch-offset-deg archive="y">6</pitch-offset-deg>
+        </config>
+      </view>
+	  
+	 
+
+      <sound>
+        <path>Aircraft/SU-27/Sounds/SU-27-sound.xml</path>
+      </sound>
+
+      <model>
+        <path>Aircraft/SU-27/Models/SU-27.xml</path>
+        <nozzle-animation type="float">1</nozzle-animation>
+      </model>
+
+	  <submodels>
+	<serviceable type="bool">1</serviceable>
+	<path>Aircraft/SU-27/Models/Stores/submodels.xml</path>
+    </submodels>
+	  
+      <startup>
+   <splash-texture>Aircraft/SU-27/SU27FGUK.jpg</splash-texture>
+  </startup>
+  
+  
+<hud>
+   <path n="1">Aircraft/SU-27/Hud/hud.xml</path>
+   <visibility n="1">true</visibility>
+   <palette>
+    <color n="0">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">0.38</red>
+     <green type="float">1.0</green>
+     <blue type="float">0.22</blue>
+    </color>
+    <color n="1">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">1.0</red>
+     <green type="float">0.2</green>
+     <blue type="float">0.0</blue>
+    </color>
+   </palette>
+ 
+   <clipping>
+            <left type="double">-65</left>
+            <right type="double">70</right>
+            <top type="double">40</top>
+            <bottom type="double">-75</bottom>
+         </clipping>
+  </hud>
+
+      <systems>
+        <autopilot>
+          <path>Aircraft/SU-27/Systems/autopilot5.xml</path>
+        </autopilot>
+		 <electrical>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+      </systems>
+	  
+	  <mp-systems>
+<radar-enabled type="bool">true</radar-enabled>
+<ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
+<combat-enabled type="bool">true</combat-enabled>
+</mp-systems>	
+
+      <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+
+<!-- Flap settings -->
+      <flaps>
+        <setting>0.00</setting>
+        <setting>0.08</setting>
+        <setting>0.16</setting>
+        <setting>0.32</setting>
+        <setting>0.48</setting>
+        <setting>0.64</setting>
+        <setting>0.82</setting>
+        <setting>1.00</setting>
+      </flaps>
+
+<!-- TFA popup dialogue -->
+      <gui>
+        <dialogs>
+          <TFA-popup>
+            <config>
+              <dialog include="Dialogs/TFA-popup.xml"/>
+            </config>
+          </TFA-popup>
+        </dialogs>
+      </gui>
+
+<!-- AoA Indexer target 7.0 deg -->
+      <aoa-indexer>
+        <too-slow-deg>8.5</too-slow-deg>  <!-- target +1.5 deg -->
+        <slow-deg>7.5</slow-deg>          <!-- target +0.5 deg -->         
+        <fast-deg>6.5</fast-deg>          <!-- target -0.5 deg -->         
+        <too-fast-deg>-5.5</too-fast-deg>  <!-- target -1.5 deg -->         
+      </aoa-indexer>
+
+<!--sub models -->
+      <submodels>
+        <serviceable type="bool">1</serviceable>
+        <path>Aircraft/SU-27/SU-27-submodels.xml</path>
+      </submodels>
+
+<!-- Help -->
+      <help>
+        <title>SU-27</title>
+        <line>Aircraft spawns with "Operational" fuel values = 50% of maximum.</line>
+   <line></line>
+   <line>Cruise speed: 870 mph (1,400 km/h) ( 750kts ) at 32,780 ft (10,000m) </line> 
+   <line>Max LevelSpeed  at altitude: 1,490 mph (2,400 km/h)at 32,780 ft (10,000 m), Mach 2.3</line>
+   <line>FCS not yet installed on this aircraft.</line>
+   <line></line>
+   <line> </line>
+   <line></line>
+   
+   <line> </line>
+   <key>
+				<name>}</name>
+				<desc>Startup/Shut down engines</desc>
+			</key>
+      </help>
+	  
+	  
+	  <menubar include="Dialogs/menu.xml"/>
+
+    </sim>
+	
+	 <systems>
+    <refuel>
+      <type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+  </systems> 
+		
+    <ai>
+      <submodels>
+        <trajectory-markers type="bool">0</trajectory-markers>
+      </submodels>
+    </ai>
+
+
+
+
+
+<!-- Start with the Parking Brake on -->
+    <controls>
+      <engines>
+        <engine n="0">
+          <throttle type="double">0</throttle>
+          <reheat type="double">0</reheat>
+        </engine>
+        <engine n="1">
+          <throttle type="double">0</throttle>
+          <reheat type="double">0</reheat>
+        </engine>
+      </engines>
+      <gear>
+        <brake-parking type="double">1.0</brake-parking>
+      </gear>
+    </controls>
+
+<!-- Engine indexes & FOD Screen pos -->
+    <engines>
+      <engine n="0">
+        <engine-num type="int">0</engine-num>
+        <throttle-norm type="float">0</throttle-norm>
+        <reheat-norm type="float">0</reheat-norm>
+      </engine>
+      <engine n="1">
+        <engine-num type="int">1</engine-num>
+        <throttle-norm type="float">0</throttle-norm>
+        <reheat-norm type="float">0</reheat-norm>
+      </engine>
+    </engines>
+
+<!-- Fuel Tank indexes -->
+    <consumables>
+      <fuel>
+        <tank n="0">
+          <tank-num type="int">0</tank-num>
+		  <level-gal_us archive="y">869</level-gal_us>
+        </tank>
+        <tank n="1">
+          <tank-num type="int">1</tank-num>
+		  <level-gal_us archive="y">1163</level-gal_us>
+        </tank>
+        <tank n="2">
+          <tank-num type="int">2</tank-num>
+		  <level-gal_us archive="y">928</level-gal_us>
+        </tank>
+        <tank n="3">
+          <tank-num type="int">3</tank-num>
+		  <level-gal_us archive="y">928</level-gal_us>
+        </tank>
+		 <tank n="4">
+          <tank-num type="int">4</tank-num>
+		  <level-gal_us archive="y">147</level-gal_us>
+        </tank>
+		 <tank n="5">
+          <tank-num type="int">5</tank-num>
+		  <level-gal_us archive="y">147</level-gal_us>
+        </tank>
+		 <tank n="6">
+          <tank-num type="int">6</tank-num>
+		  <level-gal_us archive="y">67</level-gal_us>
+        </tank>
+		 <tank n="7">
+          <tank-num type="int">7</tank-num>
+		  <level-gal_us archive="y">67</level-gal_us>
+        </tank>
+		
+      </fuel>
+    </consumables>
+	
+	<environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+  
+  <input>
+  <keyboard>
+  
+   <key n="99">
+    <name>c</name>
+    <desc>Canopy</desc>
+    <binding>
+      <command>nasal</command>
+      <script>su27.canopy.toggle();</script>
+    </binding>
+  </key>
+  
+  
+   <key n="108">
+	 <name>l</name>
+     <desc>Trigger flare release</desc>
+     <binding>
+      <command>property-toggle</command>
+      <property>ai/submodels/submodel/flare-release</property>
+      <value type="bool">true</value>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>property-assign</command>
+      <property>ai/submodels/submodel/flare-release</property>
+       <value type="bool">false</value>
+      </binding>
+     </mod-up>
+    </key>
+	
+	<key n="70">
+     <name>F</name>
+    <desc>FuelHose</desc>
+    <binding>
+      <command>nasal</command>
+   <script>SU-27.FuelHose.toggle();</script>
+    </binding>
+  </key> 
+  
+  <key n="125">
+     <name>}</name>
+     <desc>Engine Autostart</desc>
+	<binding>
+		<command>nasal</command>
+		 <script>
+		 #su27.engines.engine1.autostart();
+		 #settimer( func { su27.engines.engine2.autostart(); }, 12 );
+         yasimengines.autostart();		 
+		 </script>
+		
+	</binding>
+  </key>
+	
+  </keyboard>
+  </input>
+  
+
+  <instrumentation>
+  <illumination>
+   <settings>
+    <lcd-brightness-offset type="double">0.25</lcd-brightness-offset>
+    <led-brightness-offset type="double">0.25</led-brightness-offset>
+   </settings>
+   <lcd-brightness type="double">0.75</lcd-brightness>
+   <led-brightness type="double">0.75</led-brightness>
+   <master-brightness type="double">0.74</master-brightness>
+  </illumination>
+  
+  
+  <rwr>
+ <display-lighting-intens type="double">0.4</display-lighting-intens>
+ <symbology-lighting-intens type="double">1</symbology-lighting-intens>
+</rwr>
+
+<enav><selected type="int">3</selected></enav>
+ <radar>
+  <range type="int" archive="y">40</range>
+  <range-factor type="double" archive="n">0.001888</range-factor>
+  <minimized type="bool" archive="y">false</minimized>
+  <selected type="int">3</selected>
+
+      <!-- inicio en pruebas -->
+  <enabled type="bool">true</enabled>
+  <az-field type="double">120</az-field>
+  <range type="double">150</range>
+  <range-selected type="double">50</range-selected>
+  <radar2-range type="double">150</radar2-range>
+  <display-rdr type="bool">true</display-rdr>
+  <radar-standby type="int">3</radar-standby>
+<mode>
+  <rws type="bool">true</rws>
+  <tws-auto type="bool">false</tws-auto>
+</mode>
+
+</radar> 
+
+
+  <radar2>
+   <sweep-width-m type="double">0.0844</sweep-width-m>
+   <range-width-m type="double">0.0846</range-width-m>
+   <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+   <hud-eye-dist-m type="double">0.6705</hud-eye-dist-m>
+   <hud-radius-m type="double">0.071</hud-radius-m>
+  </radar2>
+
+   <radar-awg-9>
+	<ccm-mode-spl type="bool">false</ccm-mode-spl>
+	<ccm-mode-alt-dhf type="bool">false</ccm-mode-alt-dhf>
+	<ccm-mode-trs type="bool">false</ccm-mode-trs>
+	<display-rdr type="bool">true</display-rdr>
+	<display-ir type="bool">false</display-ir>
+	<display-iff type="bool">false</display-iff>
+	<mode type="string">PDS</mode> <!-- PDS, RWS, TWS, PDSTT, PSTT, VSL -->
+	<ant-trk-light type="bool">false</ant-trk-light>
+	<rd-rot-light type="bool">false</rd-rot-light>
+	<jat-light type="bool">false</jat-light>
+	<irot-light type="bool">false</irot-light>
+	</radar-awg-9>
+	
+<!--	
+ <transponder>
+  <standby type="bool">false</standby>
+  <interrogator-standby type="bool">false</interrogator-standby>
+  <modes>
+   <mode-1>
+    <interrogate type="bool">true</interrogate>
+	<respond type="bool">true</respond>
+	<code type="int">78</code>
+   </mode-1>
+   <mode-3A>
+    <interrogate type="bool">true</interrogate>
+	<respond type="bool">true</respond>
+	<code type="int">1001</code>
+   </mode-3A>
+   <mode-C>
+    <interrogate type="bool">true</interrogate>
+	<respond type="bool">true</respond>
+	<pressure-altitude type="int">0</pressure-altitude>
+   </mode-C>
+  </modes> 
+ </transponder>
+  -->
+<!--en pruebas fin -->
+
+ <MDEF>
+  <subsystem-selected type="string">aids</subsystem-selected>
+ </MDEF>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+	<tacan>
+	 <power type="bool">1</power>
+	</tacan>
+  <warnings>
+   <warning-suppress type="bool">false</warning-suppress>
+   <attention-lights type="bool">false</attention-lights>
+   <signals>
+    <cat-1-warning type="bool">false</cat-1-warning>
+	<cat-2-warning type="bool">false</cat-2-warning> 
+	<cat-3-warning type="bool">false</cat-3-warning> 
+	<cat-4-warning type="bool">false</cat-4-warning>   
+   </signals>
+   <flags>
+    <gear-limit type="bool">true</gear-limit>
+   </flags>
+  </warnings>
+  
+  <efis>
+
+			<ecam>
+					<display-mode type="string">FUEL</display-mode>
+			</ecam>
+			<nd>
+					<display-mode type="string">VOR</display-mode>
+					<display-mode-knob type="int">2</display-mode-knob>
+					<display-range type="int">40</display-range>
+				
+			</nd>
+			<input>
+				<vor-adf-1 type="int">1</vor-adf-1>
+				<vor-adf-2 type="int">1</vor-adf-2>
+				<CSTR type="bool">1</CSTR>
+				<WPT type="bool">1</WPT>
+				<VORD type="bool">1</VORD>
+				<NDB type="bool">1</NDB>
+				<ARPT type="bool">1</ARPT>
+				<WX type="bool">1</WX>
+				<TERR type="bool">1</TERR>
+				<TRAF type="bool">1</TRAF>
+				<taxi type="bool">1</taxi>
+				
+				
+			</input>
+
+		
+		</efis>
+</instrumentation>
+ 
+
+  <nasal>
+    <SU-27>
+      
+	  
+	  <file>Aircraft/SU-27/Nasal/refuel.nas</file>
+	   <!--><file>Aircraft/SU-27/Nasal/Explode.nas</file><-->
+    </SU-27>
+	
+	<eno>
+     <file>Aircraft/SU-27/Nasal/eno.nas</file>
+    </eno>
+	
+	<lights>
+      <file>Aircraft/SU-27/Nasal/Lights.nas</file>
+    </lights>
+
+    <livery>
+	   <file>Aircraft/SU-27/Nasal/liveries.nas</file>
+    </livery>
+  
+    <aar> 
+       <file>Aircraft/Generic/aar.nas</file>
+    </aar>
+    <rwr>
+       <file>Aircraft/SU-27/Models/Interior/Instruments/mfd/radar/rwr.nas</file>
+    </rwr> 
+    <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+
+    <radar>
+      <file>Aircraft/SU-27/Models/Interior/Instruments/mfd/radar/radar.nas</file> 
+    </radar>
+
+    <radar2>
+     <file>Aircraft/SU-27/Models/Interior/Instruments/mfd/radar/radar2.nas</file>
+    </radar2>  
+
+    <enav>
+      <file>Aircraft/SU-27/Nasal/enav.nas</file>
+    </enav>
+    <terrain-map>
+      <file>Aircraft/SU-27/Nasal/terrain-map.nas</file>
+    </terrain-map> 
+    <low>
+      <file>Aircraft/SU-27/Nasal/low.nas</file>
+    </low> 
+    <phd>
+      <file>Aircraft/SU-27/Nasal/phd.nas</file>
+    </phd>
+    <tfs>
+		<file>Aircraft/SU-27/Nasal/terrain_follow.nas</file>
+	</tfs>
+    <instrumentation>
+      <file>Aircraft/SU-27/Nasal/instrumentation.nas</file>
+      <file>Aircraft/SU-27/Nasal/ILS-31_sup.nas</file>
+    </instrumentation>
+	
+	<maintenance>
+     <file>Aircraft/SU-27/Nasal/maintenance.nas</file>
+    </maintenance>
+	
+	<yasimengines>
+     <file>Aircraft/SU-27/Nasal/yasim-engines.nas</file>
+    </yasimengines>
+
+	<su27>
+     <file>Aircraft/SU-27/Nasal/SU-27.nas</file>
+    </su27>
+  </nasal>   
+
+  </PropertyList>

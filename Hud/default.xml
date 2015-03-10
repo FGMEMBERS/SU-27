@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<!--
+F-15E Eagle HUD, StuartC, 28:12:2010, based on:
+
+
+Based on Default Panel by David Megginson, david@megginson.com.
+
+This is a Hud configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the Hud.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+-->
+
+<PropertyList>
+
+ <name>Default Aircraft Hud</name>
+
+ <instruments>
+
+  <hudladder>
+   <path>Aircraft/F-15E/Hud/hudladder.xml</path>
+  </hudladder>
+
+  <hudcard>
+   <path>Aircraft/F-15E/Hud/hudcard.xml</path>
+  </hudcard>
+
+  <instrlabel>
+   <path>Aircraft/F-15E/Hud/instrlabel.xml</path>
+  </instrlabel>
+
+ </instruments>
+
+</PropertyList>

@@ -1,0 +1,399 @@
+	<!-- SU-27 FDM
+	Based on the following data:-  http://www.sukhoi.org/eng/planes/military/su27sk/lth/
+	
+	Aircraft performance  
+Takeoff weight:
+- normal (including rockets 2xR-27R1 + 2xR-73E, 5270 kg fuel), kg
+- maximum, kg 
+23,430*
+30,450 
+Maximum landing weight, kg 21,000 
+Max landing weight, kg 23,000 
+Maximum internal fuel, kg  9,400 
+Maximum ordnance, kg 4,430 
+Service ceiling (without external ordnance and stores), km 18.5 
+Maximum flight speed at sea level (without external ordnance and stores), km/h 1,400 
+Max Mach (without external ordnance and stores) 2.35 
+G-limit (operational)  9 
+Maximum flight range (with rockets 2xR-27R1, 2xR-73E launched at half distance):
+- at sea level, km
+- at height, km 
+
+1,340
+3,530 
+Maximum airborne time, hours 4.5  
+Take-off run at normal takeoff weight, m 450 
+Landing run at normal landing weight (with braking parachute), m 620 
+Aircraft dimensions:
+- length, m
+- wingspan, m
+- height, m 
+21.9
+14.7
+5.9 
+Crew 1 
+Powerplant 
+Number and type of engines 2 x AL-31F 
+Thrust:
+- in afterburner, kgf
+- at full power, kgf 
+12,500 -2 %
+7,670 ± 2 % 
+Avionics 
+1. Fire control system:  
+1.1. Search and track radar   
+1.2. IRST and laser rangefinder linked to pilot's helmet-mounted target designator   
+1.3. Wide-angle HUD  
+1.4. IFF system interrogator   
+1.5. Weapons control system  
+2. Remote control system   
+3. IFF system transponder   
+4. Antenna feed system  
+5. Flight navigation system composed of:  
+5.1. Navigation system composed of:  
+5.1.1. Digital computer  
+5.1.2. Attitude and heading reference system  
+5.1.3. Short-range radiotechnical navigation system (SRRNS)  
+5.1.4. Automatic direction finder  
+5.2. Autopilot system  
+5.3. Altitude and speed data processing and display system  
+6. GPS satellite-based navigation system  
+7. Marker radio receiver  
+8. Electronic countermeasure equipment  
+8.1. Radar warning receiver  
+8.2. Chaff and heat flare dispenser   
+8.3. Radio jamming transmitter (in pod)  
+9. Communications system, including  
+9.1. VHF and UHF band communications transceiver   
+9.2. VHF and UHF band communications transceiver  
+9.3. SW band radio communications transceiver   
+9.4. Data communication terminal equipment   
+10. Onboard automatic monitoring system  
+10.1. Integrated onboard early warning system   
+10.2. Flight information recording equipment with operational storage unit   
+10.3. Onboard emergency situation warning equipment   
+10.4. Emergency warning system  
+10.5. Onboard recording device   
+11. Aircraft responder  
+Limits 
+A limit:   
+- SLL, hours  2,000 
+- to first overhaul, hours  1,000 
+- service life, years 20 
+Engine and outboard accessory-gearbox life:   
+- to first overhaul, hours  300 
+- service life limit, hours 900 
+
+		-->
+	<airplane mass="36100">
+
+	<!-- Approach configuration -->
+	<approach speed="145" aoa="8" fuel="1">
+		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.4"/>
+				<control-setting axis="/controls/engines/engine[0]/afterburner" value="0"/>
+						<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.4"/>
+							<control-setting axis="/controls/engines/engine[1]/afterburner" value="0"/>
+							<control-setting axis="/controls/flight/flaps" value="1"/>
+						<control-setting axis="/controls/gear/gear-down" value="1"/>
+					<control-setting axis="/controls/flight/speedbrake" value="1"/>
+			<control-setting axis="/controls/flight/slats" value="1"/>
+	</approach>
+
+	<!-- Cruise configuration.   -->
+	<cruise speed="775" alt="250" fuel="0.855">	
+		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.87"/>
+			<control-setting axis="/controls/engines/engine[0]/afterburner" value="0"/>
+				<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.87"/>
+					<control-setting axis="/controls/engines/engine[1]/afterburner" value="0"/>
+					<control-setting axis="/controls/flight/flaps" value="0.0"/>
+				<control-setting axis="/controls/gear/gear-down" value="0"/>
+			<control-setting axis="/controls/flight/speedbrake" value="0"/>
+		<control-setting axis="/controls/flight/slats" value="0"/>
+	</cruise>
+
+	<cockpit x="-5.30" y="0.00" z="1.42"/>
+
+<!-- Fuselage entries for the fuselage proper and the two
+     engine housings.
+-->
+<!-- Fuselage -->
+  <fuselage ax="0.00" ay="0.00" az="0.00"
+            bx="-12.40" by="0.00" bz="0.52"
+            width="1.4"
+            taper="0.5"
+            midpoint="0.5"/>
+
+<!-- Left engine housing -->
+
+  <fuselage ax="-10.50" ay="1.00" az="-0.33"
+            bx="-20.00" by="1.15" bz="-0.33"
+            width="1.2"
+            taper="1"
+            midpoint="0.3"/>
+
+<!-- Right engine housing -->
+
+  <fuselage ax="-10.50" ay="-1.00" az="-0.33"
+            bx="-20.00" by="-1.15" bz="-0.33"
+            width="1.2"
+            taper="1"
+            midpoint="0.3"/>
+
+		 <wing x="-12.90" y="1.80" z="0.26"
+        length="6.80"
+        chord="5.45"
+        sweep="30.0"
+        taper="0.37"
+        dihedral="0"
+        camber="0.00"
+        incidence="0.0">
+			
+		<stall aoa="21" width="8" peak="1.3"/>
+		<flap0 start="0.0" end="1" lift="1.4" drag="1.8"/>
+		<flap1 start="0.47" end="0.8" lift="1.2" drag="1.4"/>
+		<slat aoa="4" start="0.1" end="0.813" lift="1.4" drag="1.3"/>
+		
+		<control-input axis="/controls/flight/flaps" control="FLAP0"/>
+		<control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+		<control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+		<control-input axis="/controls/flight/flaps" control="SLAT"/>
+
+		<control-output control="FLAP0" prop="/surface-positions/left-flap-pos-norm"/>
+		<control-output control="FLAP0" prop="/surface-positions/right-flap-pos-norm"/>
+		<control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+		<control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+		<control-output control="SLAT" prop="/surface-positions/slat-pos-norm"/>
+
+		<control-speed control="SLAT" transition-time="1.1"/>
+		<control-speed control="FLAP0" transition-time="7.5"/>
+		<control-speed control="FLAP1" transition-time="1.5"/>
+
+	</wing>
+	
+	<mstab x="-8.39" y="0.00" z="0.56"
+         length="5.5"
+         chord="12.16"
+         sweep="68.0"
+         taper="0.64"
+         dihedral="-14"
+         camber="0.0"
+         incidence="0.0">
+			
+		<flap0 start="0.01" end="1.5" lift="-0.25" drag="20.5"/>
+		
+		<control-input axis="/controls/flight/speedbrake" control="FLAP0"/>
+
+		<control-output control="FLAP0" prop="/surface-positions/speedbrake-pos-norm"/>
+
+		<control-speed control="FLAP0" transition-time="3.0"/>
+
+	</mstab>
+
+	 <hstab x="-17.94" y="2.10" z="-0.16"
+         length="2.83"
+         chord="3.48"
+         sweep="30"
+         taper="0.39"
+         dihedral="0"
+         camber="0.00"
+         idrag="0.1"
+         effectiveness="1">
+		 
+		<stall aoa="40.0" width="2" peak="1.2"/>
+		<flap0 start="0" end="1.4" lift="1.8" drag="1"/>
+		
+
+		<control-input axis="/controls/flight/elevator" control="FLAP0"/>
+		<control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+		<control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+		<control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
+		
+
+		<control-output control="FLAP0" side="left" prop="/surface-positions/left-taileron-pos-norm"/>
+		<control-output control="FLAP0" side="right" prop="/surface-positions/right-taileron-pos-norm"/>
+		<control-output control="FLAP0" prop="/surface-positions/taileron-pos-norm"/>
+		<control-output control="FLAP0" side="left" prop="surface-positions/left-elevator-pos-norm"/>
+		<control-output control="FLAP0" side="right" prop="surface-positions/right-elevator-pos-norm"/>
+		
+
+		<control-speed control="FLAP0" transition-time="3.0"/>
+		
+		
+		</hstab>
+
+	<vstab x="-16.3" y="2.03" z="0.30"
+         length="3.75"
+         chord="3.60"
+         sweep="27.5"
+         taper="0.25"
+         effectiveness="1">
+			
+		<stall aoa="27" width="10" peak="1.5"/>
+		<flap0 start="0" end=".8" lift="1.3" drag="1.3"/>
+		<flap1 start="0.0" end="0.15" lift="0.0" drag="0.8"/>
+		
+		<control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+		<control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+		<control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+
+		<control-speed control="FLAP0" transition-time="1"/>
+
+	</vstab>
+	
+	<vstab x="-16.3" y="-2.03" z="0.30"
+         length="3.75"
+         chord="3.60"
+         sweep="27.5"
+         taper="0.25"
+         effectiveness="1">
+			
+		<stall aoa="27" width="10" peak="1.5"/>
+		<flap0 start="0" end=".8" lift="1.3" drag="1.3"/>
+		<flap1 start="0.0" end="0.15" lift="0.0" drag="0.8"/>
+		
+		<control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+		<control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+		<control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+
+		<control-speed control="FLAP0" transition-time="1"/>
+
+	</vstab>
+	
+	<!-- Lower VStabs -->
+<!-- Left -->
+  <vstab x="-16.6" y="2.03" z="-0.30"
+         length="0.90"
+         chord="2.00"
+         sweep="21.0"
+         taper="0.71"
+         dihedral="270"
+         effectiveness="1">
+
+    <stall aoa="30"
+           width="2"
+           peak="1.3"/>
+
+  </vstab>
+
+<!-- Right -->
+  <vstab x="-16.6" y="-2.03" z="-0.30"
+         length="0.90"
+         chord="2.00"
+         sweep="21.0"
+         taper="0.71"
+         dihedral="270"
+         effectiveness="1">
+
+    <stall aoa="30"
+           width="2"
+           peak="1.3"/>
+
+  </vstab>
+	
+	
+	 <jet x="-16.90" y="1.14" z="-0.26"
+       mass="3460"
+       thrust="16910"
+       afterburner="27560"
+       rotate="720">
+
+    <actionpt x="-20.00" y="1.14" z="-0.20"/>
+	
+	<control-input axis="/controls/engines/engine[0]/throttle-lever" src0="0.0" dst0="0.0" src1="0.86" dst1="1.0" control="THROTTLE"/>
+	<control-input axis="/controls/engines/engine[0]/throttle-lever" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+	
+	<control-output control="REHEAT" prop="engines/engine[0]/afterburner" />
+	
+	<control-speed control="THROTTLE" transition-time="4.0"/>
+	<!--<control-speed control="REHEAT" transition-time="8.0"/>-->
+
+
+  </jet>
+
+  <jet x="-16.90" y="-1.14" z="-0.26"
+        mass="3460"
+       thrust="16910"
+       afterburner="27560"
+       rotate="720">
+
+    <actionpt x="-20.00" y="-1.14" z="-0.20"/>
+	
+	<control-input axis="/controls/engines/engine[1]/throttle-lever" src0="0.0" dst0="0.0" src1="0.86" dst1="1.0" control="THROTTLE"/>
+	<control-input axis="/controls/engines/engine[1]/throttle-lever" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+	
+	<control-output control="REHEAT" prop="engines/engine[1]/afterburner" />
+	
+	<control-speed control="THROTTLE" transition-time="4.0"/>
+	<!-- <control-speed control="REHEAT" transition-time="8.0"/>-->
+
+
+  </jet> 
+
+	<!-- U/C - Nose -->
+  <gear x="-7.85" y="0.00" z="-2.29" compression="0.5" spring="0.4">
+
+    <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+						<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+					<control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+				<control-output control="STEER" prop="/gear/gear[0]/steering-norm"/>
+			<control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+<!-- U/C - Left main -->
+  <gear x="-13.65" y="2.13" z="-2.5" compression="0.8" spring="1.0">
+
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+							<control-input axis="/controls/gear/brake-parking" control="BRAKE" />
+						<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+					<control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+				<control-output control="BRAKE" prop="/gear/gear[1]/brake-position-norm"/>
+			<control-speed control="EXTEND" transition-time="8"/>
+		<control-speed control="BRAKE" transition-time="1"/>
+  </gear>
+
+<!-- U/C - Right main -->
+  <gear x="-13.65" y="-2.13" z="-2.5" compression="0.8" spring="1.0">
+<control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+						<control-input axis="/controls/gear/brake-parking" control="BRAKE" />
+						<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+					<control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+				<control-output control="BRAKE" prop="/gear/gear[2]/brake-position-norm"/>
+			<control-speed control="EXTEND" transition-time="8"/>
+		<control-speed control="BRAKE" transition-time="1"/>
+  </gear>
+<!-- The locations and capcities are guesswork. -->
+<!-- Fuselage tanks -->
+  <tank x="-10.7" y="0" z="0.70" jet="true" capacity="5908"/>
+  <tank x="-12" y="0" z="0.10" jet="true" capacity="7908"/>
+<!-- Left wing tank -->
+  <tank x="-14.0" y="4" z="0.0" jet="true" capacity="6308"/>
+<!-- Right wing tank -->
+  <tank x="-14.0" y="-4" z="0.0" jet="true" capacity="6308"/>
+  
+  <!-- Left tail tank -->
+  <tank x="-16.0" y="2" z="0.0" jet="true" capacity="1000"/>
+<!-- Right tail tank -->
+  <tank x="-16.0" y="-2" z="0.0" jet="true" capacity="1000"/>
+  
+   <!-- Left tail tip tank -->
+  <tank x="-17.5" y="2" z="2.5" jet="true" capacity="454"/>
+<!-- Right tail tip tank -->
+  <tank x="-17.5" y="-2" z="2.5" jet="true" capacity="454"/>
+  
+  
+
+<!-- Avionics -->
+  <ballast x="-2.8" y="0" z="0.26" mass="3000"/>
+
+<!-- Cockpit and radar -->
+  <ballast x="-5.1" y="0" z="0.83" mass="1500"/>
+
+<!-- Pilot -->
+  <ballast x="-5.05" y="0" z="0.65" mass="200"/>
+
+<!-- Trim ballast -->
+  <ballast x="-6" y="0" z="0.0" mass="2400"/>
+
+	</airplane>

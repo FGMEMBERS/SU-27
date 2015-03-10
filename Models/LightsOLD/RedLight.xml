@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<!-- red navigation lighting -->
+
+  <animation>
+    <type>material</type>
+    <object-name>Light.1</object-name>
+    <condition>
+      <not><property>sim/multiplay/generic/int[0]</property></not>
+    </condition>
+    <emission>
+      <red>1.0</red>
+      <green>0.0</green>
+      <blue>0.0</blue>
+      <factor-prop>controls/lighting/nav-lights-state</factor-prop>
+    </emission>
+  </animation>
+  <animation>
+    <type>material</type>
+    <object-name>Light</object-name>
+    <condition>
+      <not><property>sim/multiplay/generic/int[0]</property></not>
+    </condition>
+    <emission>
+      <red>0.0</red>
+      <green>0.65</green>
+      <blue>0.0</blue>
+      <factor-prop>controls/lighting/nav-lights-state</factor-prop>
+    </emission>
+  </animation>
+ 
+  <model>
+    <name>RedLight</name>
+    <path>Aircraft/SU-27/Models/Lights/normal/RedLight.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+  <model>
+    <name>RedLightRemb</name>
+    <path>Aircraft/SU-27/Models/Lights/remb/RedLightRemb.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+      <roll-deg>90</roll-deg><pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+  
+ 
+
+</PropertyList>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<!-- landing lights with auto off on retract -->
+
+
+  <animation>
+    <type>material</type>
+    <object-name>Landing</object-name>
+    <object-name>Landing.1</object-name>
+    <object-name>Reflector</object-name>
+    <object-name>Reflector.1</object-name>
+    <condition>
+      <not><property>sim/multiplay/generic/int[0]</property></not>
+    </condition>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>0.65</blue>
+      <factor-prop>sim/multiplay/generic/int[2]</factor-prop>
+    </emission>
+  </animation>
+  <model>
+    <name>LandingLight-flash1</name>
+    <path>Aircraft/SU-27/Models/Lights/normal/LandingLight-flash.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+  <model>
+    <name>LandingLightRemb1</name>
+    <path>Aircraft/SU-27/Models/Lights/remb/LandingLightRemb.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+  
+  
+  
+ 
+  <animation>
+    <type>select</type>
+    <object-name>LandingLight-flash1</object-name>
+	<object-name>LandingLightRemb1</object-name>
+	
+	
+	
+     <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation> 
+  
+ </PropertyList>

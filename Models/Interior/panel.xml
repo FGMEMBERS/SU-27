@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+  <path>panel.ac</path>
+  
+  <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>100</max-m>
+    </animation>
+  
+  
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/seat2.ac</path>
+	<offsets>
+      <x-m> 5.0 </x-m>
+      <y-m>0.01 </y-m>
+      <z-m>0.6 </z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+  
+   <model>
+   <name>pilot</name>
+    <path>Aircraft/SU-27/Models/Interior/pilot/pilot.xml</path>
+	<offsets>
+      <x-m> 5.0 </x-m>
+      <y-m>0.01 </y-m>
+      <z-m>0.95 </z-m>
+	  <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+   <model>
+   <name>pilot</name>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/divers/stick.xml</path>
+	<offsets>
+      <x-m> 4.4</x-m>
+      <y-m>0.01 </y-m>
+      <z-m>0.5</z-m>
+	  <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  
+   <model>
+   <name>pilot</name>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/divers/pedals.xml</path>
+	<offsets>
+      <x-m> 4.2 </x-m>
+      <y-m>0.01 </y-m>
+      <z-m>0.5</z-m>
+	  <pitch-deg>0</pitch-deg>
+    </offsets>
+	<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.68</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+  </model>
+  
+  
+   <animation>
+        <type>select</type>
+        <object-name>pilot</object-name>
+		<condition>
+            <not>
+            <property>sim/current-view/internal</property>
+            </not>
+        </condition>
+    </animation>		
+  
+  <!-- instruments -->
+  
+  <!-- Centre top MFD 
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/mfd/mfd-3.xml</path>
+	<offsets>
+      <x-m> 4.223 </x-m>
+      <y-m>0.01 </y-m>
+      <z-m>1 </z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>-->
+  
+  <!-- Centre lower MFD
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/mfd/mfd-1.xml</path>
+	<offsets>
+      <x-m> 4.3 </x-m>
+      <y-m>0.01 </y-m>
+      <z-m>0.73 </z-m>
+	  <pitch-deg>-35</pitch-deg>
+    </offsets>
+  </model> -->
+  
+  <!-- MFD-->
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/mfd/mfd-1.xml</path>
+	<offsets>
+     <x-m> 4.25 </x-m>
+      <y-m>0.2 </y-m>
+      <z-m>1.2 </z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+	<overlay>
+	 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>0.7</x-offset>
+    <y-offset>0.7</y-offset>
+    <z-offset>0.7</z-offset>
+   </animation>
+   </overlay>
+	
+  </model> 
+  
+ 
+  
+  <!-- right MFD 
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/mfd/mfd-4.xml</path>
+	<offsets>
+      <x-m> 4.223 </x-m>
+      <y-m>0.257 </y-m>
+      <z-m>1.03 </z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>-->
+  
+   <!-- hud -->
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/hud/hud.xml</path>
+	<offsets>
+      <x-m> 4.223 </x-m>
+      <y-m>0.01 </y-m>
+      <z-m>1.2 </z-m>
+	  <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/ISTR4-2/ISTR4-2.xml</path>
+	<offsets>
+      <x-m> 4.305 </x-m>
+      <y-m>0.15 </y-m>
+      <z-m>1.0 </z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+	<overlay>
+	 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+   </overlay>
+  </model>
+  
+  
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/SPO-15LM/SPO-15LM.xml</path>
+	<offsets>
+      <x-m> 4.315 </x-m>
+      <y-m>0.36 </y-m>
+      <z-m>0.9 </z-m>
+	  <pitch-deg>-3.5</pitch-deg>
+    </offsets>
+	<overlay>
+	 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+   </overlay>
+  </model>
+  
+  
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/ISTR4-2/ISTR4-2.xml</path>
+	<offsets>
+      <x-m> 4.305 </x-m>
+      <y-m>0.15 </y-m>
+      <z-m>1.0 </z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+	<overlay>
+	 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1.2</z-offset>
+   </animation>
+   </overlay>
+  </model>
+  
+<!-- compas --> 
+ <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/KI-13/KI-13.xml</path>
+	<offsets>
+      <x-m> 4.28 </x-m>
+      <y-m>0.22 </y-m>
+      <z-m>1.47 </z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/PNP-72-12/PNP-72-12.xml</path>
+	<offsets>
+      <x-m> 4.3116 </x-m>
+      <y-m>-0.16 </y-m>
+      <z-m>0.95</z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+  
+   <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/ai/ai.xml</path>
+	<offsets>
+      <x-m> 4.3116 </x-m>
+      <y-m>-0.16 </y-m>
+      <z-m>1.08</z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+	<overlay>
+	 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>2</x-offset>
+    <y-offset>2</y-offset>
+    <z-offset>2</z-offset>
+   </animation>
+   </overlay>
+  </model>
+  
+   <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/UV-30-3/UV-30-3.xml</path>
+	<offsets>
+        <x-m> 4.3116 </x-m>
+      <y-m>-0.27 </y-m>
+      <z-m>1</z-m>
+	  <pitch-deg>-4</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/ASIMach/asi.xml</path>
+	<offsets>
+        <x-m> 4.297 </x-m>
+      <y-m>-0.27 </y-m>
+      <z-m>1.09</z-m>
+	  <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+  
+  
+   <model>
+    <path>Aircraft/SU-27/Models/Interior/Instruments/ControlInd/slats-flaps-gear-indicator.xml</path>
+	<offsets>
+      <x-m> 4.314 </x-m>
+      <y-m>-0.36</y-m>
+      <z-m>0.92 </z-m>
+	  <pitch-deg>-4</pitch-deg>
+    </offsets>
+	<overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.75</y-offset>
+    <z-offset>0.75</z-offset>
+   </animation>
+  </overlay>
+  </model>
+
+</PropertyList>
