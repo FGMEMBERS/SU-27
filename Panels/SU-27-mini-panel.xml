@@ -112,7 +112,7 @@ Hacked by Lee Elliott for the SU-27 mock panel
 <!--  end  controls cluster -->
 
 <!-- Traditional instruments -->
-    <instrument include="../../Instruments/hsi.xml">
+    <instrument include="Instruments/hsi.xml">
       <name>Horizontal Situation Indicator</name>
       <x>34</x>
       <y>108</y>
@@ -128,7 +128,7 @@ Hacked by Lee Elliott for the SU-27 mock panel
       <h>65</h>
     </instrument>
 
-    <instrument include="../../Instruments/turn.xml">
+    <instrument include="Instruments/turn.xml">
       <name>Turn Coordinator</name>
       <x>98</x>
       <y>108</y>
@@ -136,7 +136,7 @@ Hacked by Lee Elliott for the SU-27 mock panel
       <h>65</h>
     </instrument>
 
-    <instrument include="../../Instruments/aoa-indexer.xml">
+    <instrument include="Instruments/aoa-indexer.xml">
       <name>AoAI</name>
       <x>145</x>
       <y>75</y>
@@ -144,7 +144,7 @@ Hacked by Lee Elliott for the SU-27 mock panel
       <h>65</h>
     </instrument>
 
-    <instrument include="../../Instruments/brakes.xml">
+    <instrument include="Instruments/brakes.xml">
       <name>Brake Indicator Light</name>
       <x>150</x>
       <y>130</y>
@@ -152,7 +152,7 @@ Hacked by Lee Elliott for the SU-27 mock panel
       <h>15</h>
     </instrument>
 
-    <instrument include="../../Instruments/gear-indicator.xml">
+    <instrument include="Instruments/gear-indicator.xml">
       <name>Gear Indicator Light</name>
       <x>185</x>
       <y>130</y>
