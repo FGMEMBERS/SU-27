@@ -113,7 +113,7 @@
 	<stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>/Aircraft/SU-27/Sounds/stall.wav</path>
+        <path>Aircraft/SU-27/Sounds/stall.wav</path>
         <condition>
             <less-than>
                 <property>velocities/airspeed-kt</property>
@@ -142,7 +142,7 @@
     <stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>/Aircraft/SU-27/Sounds/stall.wav</path>
+        <path>Aircraft/SU-27/Sounds/stall.wav</path>
         <condition>
             <less-than>
                 <property>velocities/airspeed-kt</property>
@@ -170,7 +170,7 @@
     <stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>/Aircraft/SU-27/Sounds/stall.wav</path>
+        <path>Aircraft/SU-27/Sounds/stall.wav</path>
         <condition>
             <less-than>
                 <property>velocities/airspeed-kt</property>
